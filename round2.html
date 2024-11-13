@@ -1,0 +1,113 @@
+<div class="hypercube-container">
+    <div class="cube outer">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+    </div>
+    <div class="cube inner">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+    </div>
+</div>
+<div class="footer-text">Designed by GDG on Campus DA-IICT</div>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #2c3e50;
+        perspective: 1000px;
+        position: relative;
+    }
+
+    .hypercube-container {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rotate 20s infinite linear;
+    }
+
+    .cube {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+    }
+
+    .face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #ecf0f1;
+        opacity: 0.5;
+    }
+
+    .outer .face {
+        border-color: #e74c3c;
+    }
+
+    .inner .face {
+        border-color: #3498db;
+    }
+
+    .front {
+        transform: rotateY(0deg) translateZ(100px);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(100px);
+    }
+
+    .right {
+        transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .left {
+        transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(100px);
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+    }
+
+    .inner {
+        transform: scale3d(0.5, 0.5, 0.5) rotate3d(1, 1, 1, 45deg);
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate3d(1, 1, 1, 0deg);
+        }
+
+        100% {
+            transform: rotate3d(1, 1, 1, 360deg);
+        }
+    }
+
+    .footer-text {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        color: #ecf0f1;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        opacity: 0.8;
+    }
+</style>
